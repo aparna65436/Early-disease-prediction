@@ -123,16 +123,16 @@ if st.button("Predict Diabetes Risk"):
 
     st.subheader("Prediction Result")
 
-if prediction[0] == 1:
-    st.error("🔴 Higher diabetes risk predicted")
-    st.write(
-        "The model estimates a higher likelihood of diabetes based on the entered values."
-    )
-else:
-    st.success("🟢 Lower diabetes risk predicted")
-    st.write(
-        "The model estimates a lower likelihood of diabetes based on the entered values."
-    )
+    if prediction[0] == 1:
+        st.error("🔴 Higher diabetes risk predicted")
+        st.write(
+            "The model estimates a higher likelihood of diabetes based on the entered values."
+        )
+    else:
+        st.success("🟢 Lower diabetes risk predicted")
+        st.write(
+            "The model estimates a lower likelihood of diabetes based on the entered values."
+        )
 st.metric(
     label="Diabetes Risk Probability",
     value=f"{risk_probability:.2f}%"
